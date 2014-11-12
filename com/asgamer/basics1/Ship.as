@@ -33,16 +33,16 @@ package com.asgamer.basics1{
 		}
 		private function fireBullet() : void
 		{
+			if (canFire)
+			{
 			stageRef.addChild(new LaserBlue(stageRef, x+vx, y - 10));
+			canFire = false;
+			fireTimer.start();
+			}
 		}
 		private function fireTimerHandler(e:TimerEvent) : void
 		{
 			canFire = true;
-			{
-				stageRef.addChild(new LaserBlue(stageRef, x + vx, y - 10));
-				canFire = false;
-				fireTimer.start();
-			}
 		}
 		
 		public function loop (e:Event) : void
