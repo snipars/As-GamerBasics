@@ -37,7 +37,7 @@ package com.asgamer.basics1
 			
 			if (hitTestObject(target.hit))
 			{
-				trace("hitME");
+				target.takeHit();
 				stageRef.addChild(new SmallImplosion(stageRef, x, y));
 				removeSelf();
 			}
